@@ -1,17 +1,16 @@
-let i = 0;
-const imagenes = document.querySelectorAll('.banner-img');
-
-function cambiarImagenes() {
-    imagenes[i].classList.remove('active');
-    i = (i + 1) % imagenes.length;
-    imagenes[i].classList.add('active');
-}
-
-setInterval(cambiarImagenes, 5000);
-
-
 window.onload = function() {
-    var imagenes = document.querySelectorAll('.producto-img');
+    let i = 0;
+    const imgs = document.querySelectorAll('.banner-img');
+
+    function cambiarImagenes() {
+        imgs[i].classList.remove('active');
+        i = (i + 1) % imgs.length;
+        imgs[i].classList.add('active');
+    }
+
+    setInterval(cambiarImagenes, 5000);
+
+    let imagenes = document.querySelectorAll('.producto-img');
     imagenes.forEach(function(img) {
         img.setAttribute("onload", "validarImagenCuadrada(this)")
         validarImagenCuadrada(img);
