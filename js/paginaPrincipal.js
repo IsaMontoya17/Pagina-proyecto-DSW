@@ -1,10 +1,10 @@
-let currentIndex = 0;
-const imagenes = document.querySelectorAll('.banner-image');
+let i = 0;
+const imagenes = document.querySelectorAll('.banner-img');
 
 function cambiarImagenes() {
-    imagenes[currentIndex].classList.remove('active');
-    currentIndex = (currentIndex + 1) % imagenes.length;
-    imagenes[currentIndex].classList.add('active');
+    imagenes[i].classList.remove('active');
+    i = (i + 1) % imagenes.length;
+    imagenes[i].classList.add('active');
 }
 
 setInterval(cambiarImagenes, 5000);

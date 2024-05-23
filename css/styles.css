@@ -110,7 +110,7 @@ ul li{
     position: relative;
 }
 
-.banner-image {
+.banner-img {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -120,6 +120,47 @@ ul li{
     transition: opacity 1s ease-in-out;
 }
 
-.banner-image.active {
+.banner-img.active {
     opacity: 1;
+}
+
+#los-fav-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
+}
+
+#los-favoritos{
+    color: var(--rosado-oscuro);
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.producto-img{
+    width: 20vw;
+}
+
+.favoritos{
+    display: flex;
+    gap: 5vw;
+    justify-content: space-evenly;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-carrito{
+    width: 12vw;
+    height: 5vh;
+    font-size: 1rem;
+    font-family: "Plus Jakarta Sans";
+    border: 0;
+    background-color: var(--rosado-oscuro);
+    color: var(--blanco);
+    border-radius: 10px;
 }
