@@ -1,0 +1,98 @@
+:root {
+    --beige: #ede6d9;
+    --rosado-claro: #e09f99;
+    --rosado-oscuro: #B8827F;
+    --cafe: #5a574f;
+    --blanco:#fff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: var(--cafe);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 60px 20px 60px;
+    background-color: var(--beige);
+    align-items: center;
+    height: 9vh;
+}
+
+ul{
+    list-style: none;
+    display: flex;
+    gap: 3vw;
+}
+
+ul li{
+    color: var(--rosado-oscuro);
+    font-weight: bold;
+}
+
+#logo{
+    width: 13vw;
+}
+
+.barra-busqueda{
+    display: flex;
+    position: relative;
+    background-color: var(--blanco);
+    border-radius: 10px;
+}
+
+.barra-busqueda input{
+    border: 0;
+    outline: 0;
+    padding-left: 10px;
+    height: 3vh;
+    border-radius: 10px;
+    font-family: "Plus Jakarta Sans";
+    width: 10vw;
+}
+
+.barra-busqueda button{
+    border: 0;
+    outline: 0;
+    padding-right: 10px;
+    background-color: transparent;
+}
+
+.barra-busqueda button i{
+    color: var(--cafe);
+}
+
+#container-texto-mov {
+    background-color: var(--rosado-claro);
+    position: relative;
+    overflow: hidden;
+    width: 100%; 
+    height: 40px; 
+    display: flex;
+    align-items: center;
+}
+
+#texto-movimiento {
+    position: absolute;
+    white-space: nowrap;
+    animation: mover-derecha-izquierda 20s linear infinite;
+    font-weight: bold;
+    font-size: .8rem;
+    color: var(--rosado-oscuro);
+}
+
+@keyframes mover-derecha-izquierda {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
