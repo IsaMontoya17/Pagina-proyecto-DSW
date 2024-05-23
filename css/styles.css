@@ -173,11 +173,18 @@ ul li a{
     width: 20vw;
 }
 
+.productos-favoritos {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
 .favoritos{
     display: flex;
     gap: 5vw;
     justify-content: space-evenly;
     padding-bottom: 10vh;
+    transition: transform 0.3s ease-in-out;
 }
 
 .card{
@@ -185,6 +192,7 @@ ul li a{
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    width: 33.33%;
 }
 
 .btn-carrito{
@@ -205,4 +213,19 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.botones-prod{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    padding-bottom: 30px;
+}
+
+.btn-productos{
+    border: 0;
+    background-color: transparent;
+    color: var(--cafe);
+    font-size: 20px;
 }
