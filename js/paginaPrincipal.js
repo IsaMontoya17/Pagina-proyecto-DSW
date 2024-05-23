@@ -9,7 +9,26 @@ function cambiarImagenes() {
 
 setInterval(cambiarImagenes, 5000);
 
+
+window.onload = function() {
+    var imagenes = document.querySelectorAll('.producto-img');
+    imagenes.forEach(function(img) {
+        img.setAttribute("onload", "validarImagenCuadrada(this)")
+        validarImagenCuadrada(img);
+    });
+};
+
 function validarImagenCuadrada(img) {
+    if (img.complete) {
+        ajustarImagen(img);
+    } else {
+        img.onload = function() {
+            ajustarImagen(img);
+        };
+    }
+}
+
+function ajustarImagen(img) {
     if (img.naturalWidth !== img.naturalHeight) {
         if (img.naturalWidth > img.naturalHeight) {
             img.style.height = 'auto';
