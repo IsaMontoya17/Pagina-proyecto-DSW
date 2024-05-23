@@ -145,6 +145,7 @@ ul li{
     display: flex;
     gap: 5vw;
     justify-content: space-evenly;
+    padding-bottom: 10vh;
 }
 
 .card{
@@ -163,4 +164,13 @@ ul li{
     background-color: var(--rosado-oscuro);
     color: var(--blanco);
     border-radius: 10px;
+}
+
+footer{
+    background-color: var(--cafe);
+    color: var(--blanco);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
