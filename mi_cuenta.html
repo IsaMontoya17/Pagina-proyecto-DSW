@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Cuenta - Glamlite Cosmetics</title>
+    <link rel="stylesheet" href="./css/login.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/cb3d0e6f1c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img src="./img/logo.jpg" alt="logo" id="logo" />
+      </a>
+      <nav class="menu">
+        <ul id="lista-menu">
+          <li>
+            <a href="#">Tienda</a>
+            <ul class="submenu">
+              <li><a href="#">Cabello</a></li>
+              <li><a href="#">Brochas</a></li>
+              <li>
+                <a href="#">Piel</a>
+                <ul class="submenu-2">
+                  <li><a href="#">Bases</a></li>
+                  <li><a href="#">Correctores</a></li>
+                  <li><a href="#">Rubores</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Labios</a></li>
+              <li><a href="#">Accesorios</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Nuevo</a></li>
+          <li><a href="#">Sale</a></li>
+          <li><a href="mi_cuenta.html">Mi cuenta</a></li>
+          <li><a href="#">Carrito</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </nav>
+      <div class="barra-busqueda">
+        <input type="text" placeholder="Buscar..." />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
+    </header>
+    <main>
+      <div id="container-texto-mov">
+        <p id="texto-movimiento">
+          GLAMLITEINSPIRA CONOCE MÁS AQUÍ • ENVÍO GRATIS POR COMPRAS SUPERIORES
+          A $100.000 • TIEMPO DE ENTREGA 4 A 8 DÍAS HÁBILES | TIENDA DE
+          MAQUILLAJE
+        </p>
+      </div>
+      <div class="mi-cuenta-container">
+        <h2>Mi Cuenta</h2>
+        <div class="forms-container">
+          <div class="login-form">
+            <h3>Acceder</h3>
+            <form>
+              <label for="login-username">Correo Electrónico</label>
+              <input type="text" id="login-username" name="username" required />
+              <label for="login-password">Contraseña</label>
+              <div class="password-input">
+                <input
+                  type="password"
+                  id="login-password"
+                  name="password"
+                  required
+                />
+                <div class="password-toggle">
+                    <input type="checkbox" id="login-show-password" />
+                    <label for="login-show-password">Mostrar contraseña</label>
+                </div>                
+              </div>
+              <button type="submit">Iniciar Sesión</button>
+            </form>
+          </div>
+          <div class="register-form">
+            <h3>Registrarse</h3>
+            <form>
+              <label for="register-username">Correo Electrónico</label>
+              <input
+                type="text"
+                id="register-username"
+                name="username"
+                required
+              />
+              <label for="register-password">Contraseña</label>
+              <div class="password-input">
+                <input
+                  type="password"
+                  id="register-password"
+                  name="password"
+                  required
+                />
+              </div>
+              <label for="confirm-password">Confirmar Contraseña</label>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm-password"
+                required
+              />
+              <div class="password-toggle">
+                <input type="checkbox" id="register-show-password" />
+                <label for="register-show-password">Mostrar contraseña</label>
+            </div>            
+              <button type="submit">Registrarse</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Copyright © 2024 Glamlite Cosmetics - Todos los Derechos Reservados |
+        Diseñado por Grupo 2
+      </p>
+    </footer>
+    <script src="./js/login.js"></script>
+  </body>
+</html>
