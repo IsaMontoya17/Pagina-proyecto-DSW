@@ -228,4 +228,5 @@ footer{
     background-color: transparent;
     color: var(--cafe);
     font-size: 20px;
+    cursor: pointer;
 }

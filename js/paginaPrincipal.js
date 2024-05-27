@@ -1,3 +1,51 @@
+const productos = [
+    {
+        img: './img/producto1.webp',
+        precio: '$30,000',
+        descripcion: 'Kit de brochas pink travel x6'
+    },
+    {
+        img: './img/producto2.webp',
+        precio: '$40,000',
+        descripcion: 'Lip gloss 1st scene'
+    },
+    {
+        img: './img/producto3.jpg',
+        precio: '$15,000',
+        descripcion: 'GEL fijador de cejas Melu'
+    },
+    {
+        img: './img/producto4.jpg',
+        precio: '$190,000',
+        descripcion: 'Polvo One Size'
+    },
+    {
+        img: './img/producto5.jpg',
+        precio: '$230,000',
+        descripcion: 'Translucent loose setting powder Laura Mercier'
+    },
+    {
+        img: './img/producto6.jpg',
+        precio: '$65,000',
+        descripcion: 'Maybelline Lifter Gloss Plump'
+    },
+    {
+        img: './img/producto7.jpg',
+        precio: '$100,000',
+        descripcion: 'Hair vitamins Sugarbearhair'
+    },
+    {
+        img: './img/producto8.webp',
+        precio: '$110,000',
+        descripcion: 'Paleta Classic Atenea'
+    },
+    {
+        img: './img/producto9.jpg',
+        precio: '$200,000',
+        descripcion: 'Sol de Janeiro Mist'
+    }
+];
+
 window.onload = function() {
     let i = 0;
     const imgs = document.querySelectorAll('.banner-img');
@@ -10,11 +58,8 @@ window.onload = function() {
 
     setInterval(cambiarImagenes, 5000);
 
-    let imagenes = document.querySelectorAll('.producto-img');
-    imagenes.forEach(function(img) {
-        img.setAttribute("onload", "validarImagenCuadrada(this)")
-        validarImagenCuadrada(img);
-    });
+    mostrarProductos();
+    pasarProductos();
 };
 
 function validarImagenCuadrada(img) {
@@ -74,3 +119,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+let currentIndex = 0;
+const itemsPerPage = 3;
+
+function mostrarProductos() {
+    const contenedorFavoritos = document.querySelector('.favoritos');
+    contenedorFavoritos.innerHTML = '';
+
+    const start = currentIndex * itemsPerPage;
+    const end = start + itemsPerPage;
+    const productosPagina = productos.slice(start, end);
+
+    productosPagina.forEach(producto => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+            <img src="${producto.img}" alt="${producto.descripcion}" class="producto-img">
+            <p>${producto.precio}</p>
+            <p>${producto.descripcion}</p>
+            <button class="btn-carrito">Añadir al carrito</button>
+        `;
+        contenedorFavoritos.appendChild(card);
+    });
+
+    // Ajustar tamaño de las imágenes recién añadidas
+    let imagenes = document.querySelectorAll('.producto-img');
+    imagenes.forEach(function(img) {
+        img.setAttribute("onload", "validarImagenCuadrada(this)")
+        validarImagenCuadrada(img);
+    });
+}
+
+function pasarProductos() {
+    const btnAnterior = document.querySelector('.anterior');
+    const btnSiguiente = document.querySelector('.siguiente');
+
+    btnAnterior.addEventListener('click', () => {
+        currentIndex--;
+        if (currentIndex < 0) {
+            currentIndex = Math.ceil(productos.length / itemsPerPage) - 1;
+        }
+        mostrarProductos();
+    });
+
+    btnSiguiente.addEventListener('click', () => {
+        currentIndex++;
+        if (currentIndex * itemsPerPage >= productos.length) {
+            currentIndex = 0;
+        }
+        mostrarProductos();
+    });
+}
