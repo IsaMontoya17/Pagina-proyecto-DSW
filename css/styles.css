@@ -231,3 +231,24 @@ footer{
     font-size: 20px;
     cursor: pointer;
 }
+
+.carrito {
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    background-color: var(--beige);
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.carrito:hover {
+    background-color: #d1c4a5;
+}
