@@ -113,7 +113,6 @@ function mostrarProductos() {
 
     let imagenes = document.querySelectorAll('.producto-img');
     imagenes.forEach(function(img) {
-        img.setAttribute("onload", "validarImagenCuadrada(this)")
         validarImagenCuadrada(img);
     });
 
@@ -146,6 +145,7 @@ function mostrarProductos() {
         });
     });
 }
+
 
 function pasarProductos() {
     const btnAnterior = document.querySelector('.anterior');
