@@ -88,9 +88,36 @@ function ajustarImagen(img) {
     }
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const botonesCarrito = document.querySelectorAll('.btn-carrito');
+let currentIndex = 0;
+const itemsPerPage = 3;
 
+function mostrarProductos() {
+    const contenedorFavoritos = document.querySelector('.favoritos');
+    contenedorFavoritos.innerHTML = '';
+
+    const start = currentIndex * itemsPerPage;
+    const end = start + itemsPerPage;
+    const productosPagina = productos.slice(start, end);
+
+    productosPagina.forEach(producto => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        card.innerHTML = `
+            <img src="${producto.img}" alt="${producto.descripcion}" class="producto-img">
+            <p>${producto.precio}</p>
+            <p>${producto.descripcion}</p>
+            <button class="btn-carrito">Añadir al carrito</button>
+        `;
+        contenedorFavoritos.appendChild(card);
+    });
+
+    let imagenes = document.querySelectorAll('.producto-img');
+    imagenes.forEach(function(img) {
+        img.setAttribute("onload", "validarImagenCuadrada(this)")
+        validarImagenCuadrada(img);
+    });
+
+    const botonesCarrito = document.querySelectorAll('.btn-carrito');
     botonesCarrito.forEach(boton => {
         boton.addEventListener('click', (event) => {
             const producto = event.target.parentElement;
@@ -117,37 +144,6 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('carrito', JSON.stringify(carrito));
             alert('Producto añadido al carrito');
         });
-    });
-});
-
-let currentIndex = 0;
-const itemsPerPage = 3;
-
-function mostrarProductos() {
-    const contenedorFavoritos = document.querySelector('.favoritos');
-    contenedorFavoritos.innerHTML = '';
-
-    const start = currentIndex * itemsPerPage;
-    const end = start + itemsPerPage;
-    const productosPagina = productos.slice(start, end);
-
-    productosPagina.forEach(producto => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        card.innerHTML = `
-            <img src="${producto.img}" alt="${producto.descripcion}" class="producto-img">
-            <p>${producto.precio}</p>
-            <p>${producto.descripcion}</p>
-            <button class="btn-carrito">Añadir al carrito</button>
-        `;
-        contenedorFavoritos.appendChild(card);
-    });
-
-    // Ajustar tamaño de las imágenes recién añadidas
-    let imagenes = document.querySelectorAll('.producto-img');
-    imagenes.forEach(function(img) {
-        img.setAttribute("onload", "validarImagenCuadrada(this)")
-        validarImagenCuadrada(img);
     });
 }
 

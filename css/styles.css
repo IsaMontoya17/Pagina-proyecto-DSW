@@ -204,6 +204,7 @@ ul li a{
     background-color: var(--rosado-oscuro);
     color: var(--blanco);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 footer{
