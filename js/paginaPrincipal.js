@@ -43,3 +43,34 @@ function ajustarImagen(img) {
     }
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const botonesCarrito = document.querySelectorAll('.btn-carrito');
+
+    botonesCarrito.forEach(boton => {
+        boton.addEventListener('click', (event) => {
+            const producto = event.target.parentElement;
+            const nombre = producto.querySelector('p:nth-child(3)').textContent;
+            const precio = parseFloat(producto.querySelector('p:nth-child(2)').textContent.replace('$', '').replace(',', ''));
+            const img = producto.querySelector('img').src;
+
+            const item = {
+                nombre,
+                precio,
+                img,
+                cantidad: 1
+            };
+
+            let carrito = localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
+            const productoExistente = carrito.find(producto => producto.nombre === nombre);
+
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push(item);
+            }
+
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert('Producto añadido al carrito');
+        });
+    });
+});

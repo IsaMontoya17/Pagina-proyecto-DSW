@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Glamlite Cosmetics</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/carrito.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="./img/logo.jpg" alt="logo" id="logo">
+        </a>
+        <nav class="menu">
+            <ul id="lista-menu">
+                <li><a href="index.html">Tienda</a></li>
+                <li><a href="#">Nuevo</a></li>
+                <li><a href="#">Sale</a></li>
+                <li><a href="mi_cuenta.html">Mi cuenta</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="barra-busqueda">
+            <input type="text" placeholder="Buscar..." />
+            <button type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+    </header>
+    <main>
+        <div id="container-texto-mov">
+            <p id="texto-movimiento">
+              GLAMLITEINSPIRA CONOCE MÁS AQUÍ • ENVÍO GRATIS POR COMPRAS SUPERIORES
+              A $100.000 • TIEMPO DE ENTREGA 4 A 8 DÍAS HÁBILES | TIENDA DE
+              MAQUILLAJE
+            </p>
+          </div>
+        <div class="carrito-container">
+            <h2>Carrito de Compras</h2>
+            <div class="carrito-items">
+                <!-- aqui se agregan los productos dinamicamente -->
+            </div>
+            <div class="carrito-total">
+                <p class="total">Total: <span id="carrito-total-precio">$0.00</span></p>
+                <div class="carrito-cupon">
+                    <input type="text" id="carrito-cupon-codigo" placeholder="Código de descuento">
+                    <button id="carrito-cupon-aplicar">Aplicar Cupón</button>
+                </div>
+                <button id="carrito-comprar">Comprar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © 2024 Glamlite Cosmetics - Todos los Derechos Reservados | Diseñado por Grupo 2</p>
+    </footer>
+    <script src="./js/carrito.js"></script>
+</body>
+</html>
