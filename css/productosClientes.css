@@ -1,0 +1,39 @@
+.producto-img{
+    width: 20vw;
+}
+
+.productos-completos {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.productos-fila{
+    display: flex;
+    gap: 5vw;
+    justify-content: space-evenly;
+    padding-bottom: 10vh;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 33.33%;
+}
+
+.btn-carrito{
+    width: 12vw;
+    height: 5vh;
+    font-size: 1rem;
+    font-family: "Plus Jakarta Sans";
+    border: 0;
+    background-color: var(--rosado-oscuro);
+    color: var(--blanco);
+    border-radius: 10px;
+}
