@@ -94,6 +94,13 @@ footer {
     margin: 10px;
 }
 
+footer {
+    position: fixed; 
+    bottom: 0;
+    width: 100%;
+    background-color: var(--cafe);
+    color: var(--blanco);
+}
 
 
 
