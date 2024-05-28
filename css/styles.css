@@ -52,6 +52,7 @@ ul li a{
     z-index: 1;
 }
 
+
 .submenu-2 {
     display: none;
     position: absolute;
@@ -204,6 +205,7 @@ ul li a{
     background-color: var(--rosado-oscuro);
     color: var(--blanco);
     border-radius: 10px;
+    cursor: pointer;
 }
 
 footer{
@@ -228,4 +230,31 @@ footer{
     background-color: transparent;
     color: var(--cafe);
     font-size: 20px;
+    cursor: pointer;
+}
+
+.carrito {
+    position: fixed;
+    bottom: 120px;
+    right: 30px;
+    background-color: var(--beige);
+    width: 3vw;
+    height: 3vw;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.carrito:hover {
+    background-color: #d1c4a5;
+}
+
+#link-carrito{
+    text-decoration: none; 
+    color: inherit;
 }
