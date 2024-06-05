@@ -1,11 +1,11 @@
-.button{
+.button {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin-top: 10px;
 }
 
-.col{
+.col {
     display: flex;
     justify-content: center; /* Centra horizontalmente los elementos */
     align-items: center; /* Centra verticalmente los elementos */
@@ -21,7 +21,7 @@
     margin-top: 20px; /* Agrega un margen superior de 20px */
 }
 
-.btn-agregarProducto{
+.btn-agregarProducto {
     width: 12vw;
     height: 10vh;
     font-size: 1rem;
@@ -32,10 +32,6 @@
     border-radius: 10px;
 }
 
-.producto-img{
-    width: 20vw;
-}
-
 .productos-completos {
     overflow: hidden;
     position: relative;
@@ -43,8 +39,9 @@
     margin-top: 20px;
 }
 
-.productos-fila{
+.productos-fila {
     display: flex;
+    flex-wrap: wrap;
     gap: 5vw;
     justify-content: space-evenly;
     padding-bottom: 10vh;
@@ -53,15 +50,30 @@
     margin-right: 20px;
 }
 
-.card{
+.card {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    width: 33.33%;
+    width: 20vw; 
+    height: auto; 
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    margin-bottom: 20px; 
 }
 
-.btn-editar{
+.producto-img {
+    width: 100%;
+    height: auto;
+    max-width: 150px; 
+    object-fit: cover;
+}
+
+.btn-editar,
+.btn-eliminar {
     width: 12vw;
     height: 5vh;
     font-size: 1rem;
@@ -70,15 +82,5 @@
     background-color: var(--rosado-oscuro);
     color: var(--blanco);
     border-radius: 10px;
-}
-
-.btn-eliminar{
-    width: 12vw;
-    height: 5vh;
-    font-size: 1rem;
-    font-family: "Plus Jakarta Sans";
-    border: 0;
-    background-color: var(--rosado-oscuro);
-    color: var(--blanco);
-    border-radius: 10px;
+    margin-top: 10px;
 }
